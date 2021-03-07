@@ -1,0 +1,37 @@
+.sidebar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 350px;
+    background-color: darkslategray;
+    color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 10px 30px 10px;
+}
+
+.artist-portrait {
+    border-radius: 50%;
+}
+
+.menu-item-container {
+    padding: 5px 0 5px 0;
+    width: 100%;
+    text-align: center;
+}
+
+.menu-item-container:hover {
+    background-color: black;
+}
+
+.menu-item {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.menu-item:hover {
+    color: inherit;
+    text-decoration: inherit;
+}

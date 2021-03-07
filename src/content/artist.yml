@@ -1,0 +1,8 @@
+name: 'Renate Rittler'
+description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor'
+links:
+ - icon: 'fa fa-envelope'
+   url: 'mailto:dummy@mail.com'
+quotes:
+ - text: '[Der Künstler] ... ein politisches Wesen, stets aufnahmebereit für bewegende, brennende oder glückliche Ereignisse, die er in jeder Weise erwidert.'
+   author: 'Pablo Picasso'

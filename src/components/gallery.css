@@ -1,0 +1,16 @@
+.gallery {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.painting {
+    max-width: 300px;
+}
+
+.painting-title {
+    font-weight: bolder;
+    font-style: italic;
+}
