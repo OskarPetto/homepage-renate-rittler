@@ -8,17 +8,15 @@ import Section from '../models/section';
 import Artist from '../models/artist';
 
 const smallImageQuery = graphql`
-query SmallImage {
+query SmallImageQuery {
   allFile {
     edges {
       node {
         name
         childImageSharp {
-          gatsbyImageData(
-            width: 300
-            placeholder: BLURRED
-            formats: [AUTO, WEBP, AVIF]
-          )
+          fixed(maxWidth: 400) {
+            ...GatsbyImageSharpFixed
+          }
         }
       }
     }
@@ -36,6 +34,10 @@ const ContentService = {
     const { edges } = data.allFile;
     const imageNode = edges.find(({ node }) => node.name === painting.id).node;
     return getImage(imageNode);
+  },
+
+  getBigImage(painting: Painting) {
+    return this.getSmallImage(painting);
   },
 
   getSections(): Section[] {

@@ -10,14 +10,14 @@ const Sidebar: FunctionComponent = () => {
   return (
     <div className="sidebar-container">
       <StaticImage
-        src="../images/artist.jpg"
+        src="../../static/artist.jpg"
         alt={artist.name}
         placeholder="blurred"
         width={200}
         height={200}
         className="artist-portrait"
       />
-      <h1>{artist.name}</h1>
+      <h1 className="artist-name">{artist.name}</h1>
       <p>{artist.description}</p>
       {artist.quotes.map((quote) => (
         <div>
@@ -26,9 +26,7 @@ const Sidebar: FunctionComponent = () => {
         </div>
       )) }
       {sections.map((section) => (
-        <div className="menu-item-container">
-          <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
-        </div>
+        <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
       ))}
     </div>
   );
