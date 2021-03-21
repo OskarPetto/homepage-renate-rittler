@@ -7,28 +7,35 @@ import ContentService from '../services/content-service';
 import './gallery.css';
 
 interface GalleryProps {
-    section: Section;
+  section: Section
 }
 
-const Gallery: FunctionComponent<GalleryProps> = ({ section }: GalleryProps) => {
+const Gallery: FunctionComponent<GalleryProps> = ({
+  section,
+}: GalleryProps) => {
   const [openedPainting, setOpenedPainting] = useState<Painting>(undefined);
 
   const paintings = ContentService.getPaintings(section);
 
   return (
     <div className="gallery">
-      <h2 className="gallery-title" id={section.id}>{section.name}</h2>
+      <h2 className="gallery-title" id={section.id}>
+        {section.name}
+      </h2>
       <CardColumns>
         {paintings.map((painting) => (
-          <Card className="painting" onClick={() => setOpenedPainting(painting)}>
-            <GatsbyImage
+          <Card
+            className="painting"
+            onClick={() => setOpenedPainting(painting)}
+          >
+            <Card.Img
+              as={GatsbyImage}
               image={ContentService.getSmallImage(painting)}
               alt={painting.title}
             />
+
             <Card.Body>
-              <h3 className="painting-title card-title">
-                {painting.title}
-              </h3>
+              <h3 className="painting-title card-title">{painting.title}</h3>
               <div className="painting-subtitle">
                 {`${painting.year}, 
                   ${painting.technique}, 
@@ -38,15 +45,24 @@ const Gallery: FunctionComponent<GalleryProps> = ({ section }: GalleryProps) => 
           </Card>
         ))}
       </CardColumns>
-      <Modal show={openedPainting !== undefined} onHide={() => setOpenedPainting(undefined)}>
+      {openedPainting !== undefined
+      && (
+      <Modal
+        show={openedPainting !== undefined}
+        onHide={() => setOpenedPainting(undefined)}
+      >
         <Modal.Header closeButton />
         <Modal.Body>
           <GatsbyImage
-            image={openedPainting === undefined ? undefinded : ContentService.getBigImage(openedPainting)}
+            image={
+            ContentService.getBigImage(openedPainting)
+          }
             alt={openedPainting.title}
           />
         </Modal.Body>
       </Modal>
+      )}
+
     </div>
   );
 };

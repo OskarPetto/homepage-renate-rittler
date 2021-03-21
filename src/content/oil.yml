@@ -1,0 +1,85 @@
+- id: 'video_life'
+  title: 'Video Life'
+  year: 2015 
+  size: '70x100cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'stille'
+  title: 'Stille'
+  year: 2015 
+  size: '70x90cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'zukunftsangst'
+  title: 'Zukunftsangst'
+  year: 2015 
+  size: 'TODO'
+  technique: 'Öl auf Baumwolle'
+- id: 'der_verwurzelte'
+  title: 'Der Verwurzelte'
+  year: 2015 
+  size: 'TODO'
+  technique: 'Öl auf Baumwolle'
+- id: 'bling_bling'
+  title: 'Bling-Bling'
+  year: 2016 
+  size: '70x100cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'auch_du'
+  title: 'Auch Du'
+  year: 2017 
+  size: '60x80cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'hitze1'
+  title: 'Hitze I'
+  year: 2017 
+  size: '80x120cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'hitze2'
+  title: 'Hitze II'
+  year: 2020 
+  size: '70x100cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'klavierkonzert_mozart'
+  title: 'Klavierkonzert (Mozart)'
+  year: 2017 
+  size: '80x80cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'klavierkonzert_chopin'
+  title: 'Klavierkonzert (Chopin)'
+  year: 2017 
+  size: 'TODO'
+  technique: 'Öl auf Baumwolle'
+- id: 'alptraum'
+  title: 'Alptraum'
+  year: 2017 
+  size: '70x100cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'tanz_auf_dem_vulkan'
+  title: 'Tanz auf dem Vulkan'
+  year: 2018 
+  size: '80x100cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'gestrandet'
+  title: 'Gestrandet'
+  year: 2018 
+  size: '80x60cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'ohne_titel_verhuellt'
+  title: 'Ohne Titel ("Verhüllt")'
+  year: 2018 
+  size: '80x60cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'letztes_glas'
+  title: 'Letztes Glas'
+  year: 2019 
+  size: '80x70cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'die_glasscheibe'
+  title: 'Die Glasscheibe'
+  year: 2019 
+  size: '80x70cm'
+  technique: 'Öl auf Baumwolle'
+- id: 'das_aquarium'
+  title: 'Das Aquarium'
+  year: 2019 
+  size: '70x90cm'
+  technique: 'Öl auf Baumwolle'

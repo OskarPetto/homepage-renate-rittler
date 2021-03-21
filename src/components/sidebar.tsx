@@ -1,7 +1,16 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import React, { FunctionComponent } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ContentService from '../services/content-service';
 import './sidebar.css';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
+function getIcon(link: string) {
+  if (link.includes('mail')) {
+    return faEnvelope;
+  }
+  return null;
+}
 
 const Sidebar: FunctionComponent = () => {
   const sections = ContentService.getSections();
@@ -13,21 +22,40 @@ const Sidebar: FunctionComponent = () => {
         src="../../static/artist.jpg"
         alt={artist.name}
         placeholder="blurred"
-        width={200}
-        height={200}
+        width={150}
+        // height={300}
         className="artist-portrait"
       />
-      <h1 className="artist-name">{artist.name}</h1>
-      <p>{artist.description}</p>
+      <div className="artist-name">
+        <h1>{artist.name}</h1>
+      </div>
+      <div className="artist-description">
+        <ul>
+          {artist.facts.map((fact) => (
+            <li>
+              {`# ${fact}`}
+            </li>
+          ))}
+        </ul>
+      </div>
       {artist.quotes.map((quote) => (
-        <div>
-          <p>{quote.text}</p>
+        <div className="quote-text">
+          <p>
+            "
+            {quote.text}
+            "
+          </p>
           <p>{quote.author}</p>
         </div>
       )) }
-      {sections.map((section) => (
-        <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
-      ))}
+      <div className="menu">
+        {sections.map((section) => (
+          <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
+        ))}
+        {
+          artist.links.map((link) => (<a className="menu-item" href={link} aria-label="Mail"><FontAwesomeIcon icon={getIcon(link)} /></a>))
+        }
+      </div>
     </div>
   );
 };

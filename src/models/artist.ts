@@ -1,17 +1,12 @@
-export interface Links {
-    icon: string;
-    url: string;
-}
-
 export interface Quote {
     text: string;
     author: string;
 }
 
 export interface Artist {
-    description: string;
+    facts: string[];
     name: string;
-    links: Links[];
+    links: string[];
     quotes: Quote[];
 }
 

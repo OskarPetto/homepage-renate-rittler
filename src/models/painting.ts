@@ -4,7 +4,7 @@ export interface Painting {
     year: number;
     size: string;
     technique: string;
-    section: string;
+    hide: boolean;
 }
 
 export default Painting;

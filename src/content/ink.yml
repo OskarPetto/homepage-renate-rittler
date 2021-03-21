@@ -1,0 +1,268 @@
+- id: 'ungebremstes_wachstum'
+  title: 'Ungebremstes Wachstum'
+  year: 2015
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'strassenkind'
+  title: 'Straßenkind'
+  year: 2015
+  size: '50x35cm'
+  technique: 'Tusche aquarelliert'
+- id: 'schutzbeduerftig'
+  title: 'Schutzbedürftig'
+  year: 2015
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'schosshuendchen'
+  title: 'Schoßhündchen'
+  year: 2015
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'kuerbisse'
+  title: 'Kürbisse'
+  year: 2015
+  size: '50x35cm'
+  technique: 'Aquarell & Tusche'
+- id: 'ballungsraeume'
+  title: 'Ballungsräume'
+  year: 2016
+  size: '50x40cm'
+  technique: 'Aquarell & Tusche'
+- id: 'wald'
+  title: 'Wald'
+  year: 2016
+  size: '60x45cm'
+  technique: 'Aquarell & Tusche'
+- id: 'luft'
+  title: 'Luft'
+  year: 2016
+  size: '50x40cm'
+  technique: 'Aquarell & Tusche'
+- id: 'spaetsommer'
+  title: 'Spätsommer'
+  year: 2016
+  size: '35x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'alte_pflanzen'
+  title: 'Alte Pflanzen'
+  year: 2016
+  size: '35x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'wutwolke'
+  title: 'Wutwolke'
+  year: 2016
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zusammenbruch'
+  title: 'Zusammenbruch'
+  year: 2016
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'staedtische_lebebatterie'
+  title: 'Städtische Lebebatterie'
+  year: 2016
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'waldlichtung'
+  title: 'Waldlichtung'
+  year: 2016
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'potemkinsche_au'
+  title: 'Potemkinsche Au'
+  year: 2017
+  size: '50x40cm'
+  technique: 'Aquarell & Tusche'
+- id: 'lemminge'
+  title: 'Lemminge'
+  year: 2017
+  size: '64x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'vernetzt'
+  title: 'Vernetzt'
+  year: 2017
+  size: '64x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'chamaeleons'
+  title: 'Chamäleons'
+  year: 2017
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'mutterfressen'
+  title: 'Mutterfressen'
+  year: 2017
+  size: '60x46cm'
+  technique: 'Aquarell & Tusche'
+- id: 'welken'
+  title: 'Welken'
+  year: 2017
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'ratlos'
+  title: 'Ratlos'
+  year: 2017
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+  hide: true
+- id: 'anspruch'
+  title: 'Anspruch'
+  year: 2017
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'vase_und_blumen'
+  title: 'Vase und Blumen'
+  year: 2017
+  size: '36x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'exoten'
+  title: 'Exoten'
+  year: 2018
+  size: '64x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'kopf'
+  title: 'Kopf'
+  year: 2018
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'licht'
+  title: 'Licht'
+  year: 2019
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'langes_leben'
+  title: 'Langes Leben'
+  year: 2019
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'beerenzweig'
+  title: 'Beerenzweig'
+  year: 2019
+  size: '50x64cm'
+  technique: 'Aquarell'
+- id: 'bedrohung'
+  title: 'Bedrohung'
+  year: 2019
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'hoffnung'
+  title: 'Hoffnung'
+  year: 2019
+  size: '50x64cm'
+  technique: 'Tusche'
+- id: 'verteilungsproblem'
+  title: 'Verteilungsproblem'
+  year: 2019
+  size: '64x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'wachsende_beduerftigkeit'
+  title: 'Wachsende Bedürftigkeit'
+  year: 2019
+  size: '64x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zurueckgelassen1'
+  title: 'Zurückgelassen I'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zurueckgelassen2'
+  title: 'Zurückgelassen II'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zurueckgelassen3'
+  title: 'Zurückgelassen III'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zurueckgelassen4'
+  title: 'Zurückgelassen IV'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zurueckgelassen5'
+  title: 'Zurückgelassen V'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'zurueckgelassen6'
+  title: 'Zurückgelassen VI'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'holunder'
+  title: 'Holunder'
+  year: 2020
+  size: '36x51cm'
+  technique: 'Aquarell'
+- id: 'mohnfeld'
+  title: 'Mohnfeld'
+  year: 2020
+  size: '36x51cm'
+  technique: 'Aquarell & Tusche'
+- id: 'schlechtes_gewissen'
+  title: 'Schlechtes Gewissen'
+  year: 2020
+  size: '64x50cm'
+  technique: 'Aquarell & Tusche'
+- id: 'ohne_titel_demo'
+  title: 'Ohne Titel (Demo)'
+  year: 2020
+  size: '59x42cm'
+  technique: 'Mischtechnik'
+- id: 'kahlschlag'
+  title: 'Kahlschlag'
+  year: 2020
+  size: '60x45cm'
+  technique: 'Aquarell & Tusche'
+- id: 'pilze'
+  title: 'Pilze'
+  year: 2020
+  size: '59x42cm'
+  technique: 'Aquarell & Tusche'
+  hide: true
+- id: 'ruhe'
+  title: 'Ruhe'
+  year: 2020
+  size: '59x42cm'
+  technique: 'Aquarell'
+- id: 'pilzbaum'
+  title: 'Pilzbaum'
+  year: 2020
+  size: '51x36cm'
+  technique: 'Aquarell'
+- id: 'beute'
+  title: 'Beute'
+  year: 2020
+  size: '48x35cm'
+  technique: 'Aquarell'
+- id: 'lauch'
+  title: 'Lauch'
+  year: 2020
+  size: '51x36cm'
+  technique: 'Aquarell & Tusche'
+- id: 'mohn'
+  title: 'Mohn'
+  year: 2020
+  size: '39x36cm'
+  technique: 'Aquarell'
+- id: 'zaun'
+  title: 'Zaun'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+- id: 'hoellensturz'
+  title: 'Höllensturz'
+  year: 2020
+  size: '42x59cm'
+  technique: 'Aquarell & Tusche'
+- id: 'die_balkontuer'
+  title: 'Die Balkontür'
+  year: 2020
+  size: '50x64cm'
+  technique: 'Aquarell'
+- id: 'der_traum_der_wueste'
+  title: 'Der Traum der Wüste'
+  year: 2021
+  size: '50x64cm'
+  technique: 'Aquarell & Tusche'
+  hide: true

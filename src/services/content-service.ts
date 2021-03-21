@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import paintings from '../content/paintings.yml';
+import ink from '../content/ink.yml';
+import oil from '../content/oil.yml';
 import sections from '../content/sections.yml';
 import artist from '../content/artist.yml';
 import Painting from '../models/painting';
@@ -14,9 +15,7 @@ query SmallImageQuery {
       node {
         name
         childImageSharp {
-          fixed(maxWidth: 400) {
-            ...GatsbyImageSharpFixed
-          }
+        	gatsbyImageData(width: 400)
         }
       }
     }
@@ -26,7 +25,18 @@ query SmallImageQuery {
 const ContentService = {
 
   getPaintings(section: Section): Painting[] {
-    return paintings.filter((painting) => painting.section === section.id);
+    let paintings = [];
+    switch (section.id) {
+      case 'ink':
+        paintings = ink;
+        break;
+      case 'oil':
+        paintings = oil;
+        break;
+      default:
+        paintings = [];
+    }
+    return paintings.filter((painting) => !painting.hide).sort((p1, p2) => p1.year - p2.year);
   },
 
   getSmallImage(painting: Painting) {
