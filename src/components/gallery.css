@@ -1,29 +1,46 @@
 .gallery {
-    margin-top: 1rem;
+    width: 100%;
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1240px;
 }
 
-.gallery-title {
-    margin-bottom: 1rem;
-    /* font-weight: bold; */
+@media (min-width: 576px) {
+    .gallery {
+        padding: 1rem;
+    }
+}
+
+.gallery-paintings {   
+    display: grid;   
+    gap: 1em;   
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));   
+    grid-template-rows: masonry; 
+    max-width: 1240px;
+    width: 100%;
 }
 
 .painting {
-    border: 0px !important;
-    margin: 0 !important;
+    border: 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 @media (min-width: 576px) {
     .painting {
+        border: 1px;
         box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
     }
 }
 
-.painting-title {
-    /* font-weight: bolder; */
+
+.painting-info {
+    padding: 1rem;
+}
+
+.gallery-title {
+    margin-bottom: 1rem;
     font-style: italic;
 }
 
