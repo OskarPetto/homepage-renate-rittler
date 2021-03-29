@@ -159,6 +159,16 @@
   year: 2019
   size: '64x50cm'
   technique: 'Aquarell & Tusche'
+- id: 'holunder'
+  title: 'Holunder'
+  year: 2020
+  size: '36x51cm'
+  technique: 'Aquarell'
+- id: 'mohnfeld'
+  title: 'Mohnfeld'
+  year: 2020
+  size: '36x51cm'
+  technique: 'Aquarell & Tusche'
 - id: 'zurueckgelassen1'
   title: 'Zurückgelassen I'
   year: 2020
@@ -188,16 +198,6 @@
   title: 'Zurückgelassen VI'
   year: 2020
   size: '50x64cm'
-  technique: 'Aquarell & Tusche'
-- id: 'holunder'
-  title: 'Holunder'
-  year: 2020
-  size: '36x51cm'
-  technique: 'Aquarell'
-- id: 'mohnfeld'
-  title: 'Mohnfeld'
-  year: 2020
-  size: '36x51cm'
   technique: 'Aquarell & Tusche'
 - id: 'schlechtes_gewissen'
   title: 'Schlechtes Gewissen'
