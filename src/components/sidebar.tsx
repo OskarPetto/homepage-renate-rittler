@@ -17,44 +17,48 @@ const Sidebar: FunctionComponent = () => {
   const artist = ContentService.getArtist();
 
   return (
-    <div className="sidebar-container">
-      <StaticImage
-        src="../../static/artist.jpg"
-        alt={artist.name}
-        placeholder="blurred"
-        width={150}
-        // height={300}
-        className="artist-portrait"
+    <div className="sidebar">
+      <div
+        className="banner"
       />
-      <div className="artist-name">
-        <h1>{artist.name}</h1>
-      </div>
-      <div className="artist-description">
-        <ul>
-          {artist.facts.map((fact) => (
-            <li>
-              {`# ${fact}`}
-            </li>
-          ))}
-        </ul>
-      </div>
-      {artist.quotes.map((quote) => (
-        <div className="quote-text">
-          <p>
-            "
-            {quote.text}
-            "
-          </p>
-          <p>{quote.author}</p>
+      <div className="sidebar-container">
+        <StaticImage
+          src="../../static/artist.jpg"
+          alt={artist.name}
+          width={150}
+          height={150}
+          className="artist-portrait"
+        />
+        <div className="artist-name">
+          <h1>{artist.name}</h1>
         </div>
-      )) }
-      <div className="menu">
-        {sections.map((section) => (
-          <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
-        ))}
-        {
+        <div className="artist-description">
+          <ul>
+            {artist.facts.map((fact) => (
+              <li>
+                {`# ${fact}`}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {artist.quotes.map((quote) => (
+          <div className="quote-text">
+            <p>
+              "
+              {quote.text}
+              "
+            </p>
+            <p>{quote.author}</p>
+          </div>
+        )) }
+        <div className="menu">
+          {sections.map((section) => (
+            <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
+          ))}
+          {
           artist.links.map((link) => (<a className="menu-item" href={link} aria-label="Mail"><FontAwesomeIcon icon={getIcon(link)} /></a>))
         }
+        </div>
       </div>
     </div>
   );
