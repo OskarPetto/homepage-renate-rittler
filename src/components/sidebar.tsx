@@ -25,8 +25,8 @@ const Sidebar: FunctionComponent = () => {
         <StaticImage
           src="../../static/artist.jpg"
           alt={artist.name}
-          width={150}
-          height={150}
+          width={160}
+          height={160}
           className="artist-portrait"
         />
         <div className="artist-name">
