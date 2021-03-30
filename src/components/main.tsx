@@ -8,7 +8,9 @@ const Main: FunctionComponent = () => {
   return (
     <main>
       <div className="main-container">
-        {sections.map((section) => <Gallery section={section} />)}
+        {sections.map((section) => (
+          <Gallery section={section} />
+        ))}
       </div>
     </main>
   );

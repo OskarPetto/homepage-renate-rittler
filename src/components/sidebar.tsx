@@ -18,9 +18,7 @@ const Sidebar: FunctionComponent = () => {
 
   return (
     <div className="sidebar">
-      <div
-        className="banner"
-      />
+      <div className="banner" />
       <div className="sidebar-container">
         <StaticImage
           src="../../static/artist.jpg"
@@ -35,29 +33,27 @@ const Sidebar: FunctionComponent = () => {
         <div className="artist-description">
           <ul>
             {artist.facts.map((fact) => (
-              <li>
-                {`# ${fact}`}
-              </li>
+              <li>{`# ${fact}`}</li>
             ))}
           </ul>
         </div>
         {artist.quotes.map((quote) => (
           <div className="quote-text">
-            <p>
-              "
-              {quote.text}
-              "
-            </p>
+            <p>{`"${quote.text}"`}</p>
             <p>{quote.author}</p>
           </div>
-        )) }
+        ))}
         <div className="menu">
           {sections.map((section) => (
-            <a className="menu-item" href={`#${section.id}`}>{section.name}</a>
+            <a className="menu-item" href={`#${section.id}`}>
+              {section.name}
+            </a>
           ))}
-          {
-          artist.links.map((link) => (<a className="menu-item" href={link} aria-label="Mail"><FontAwesomeIcon icon={getIcon(link)} /></a>))
-        }
+          {artist.links.map((link) => (
+            <a className="menu-item" href={link} aria-label="Mail">
+              <FontAwesomeIcon icon={getIcon(link)} />
+            </a>
+          ))}
         </div>
       </div>
     </div>

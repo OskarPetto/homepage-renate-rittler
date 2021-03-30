@@ -9,18 +9,19 @@ import './gallery.css';
 import PaintingModal from './painting-modal';
 
 const smallPaintingQuery = graphql`
-query SmallPaintingQuery {
-  allFile {
-    edges {
-      node {
-        name
-        childImageSharp {
-        gatsbyImageData(width: 400)
+  query SmallPaintingQuery {
+    allFile {
+      edges {
+        node {
+          name
+          childImageSharp {
+            gatsbyImageData(width: 400)
+          }
         }
       }
     }
   }
-}`;
+`;
 
 interface GalleryProps {
   section: Section
@@ -73,7 +74,12 @@ const Gallery: FunctionComponent<GalleryProps> = ({
           </div>
         ))}
       </Masonry>
-      <PaintingModal painting={openedPainting} onClose={() => { setOpenedPainting(null); }} />
+      <PaintingModal
+        painting={openedPainting}
+        onClose={() => {
+          setOpenedPainting(null);
+        }}
+      />
     </div>
   );
 };

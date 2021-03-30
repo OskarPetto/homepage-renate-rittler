@@ -1,12 +1,12 @@
 @media (min-width: 576px) {
-    main {
-        margin-left: 420px;
-    }
+  main {
+    margin-left: 420px;
+  }
 }
 
 .main-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

@@ -8,7 +8,6 @@ import Section from '../models/section';
 import Artist from '../models/artist';
 
 const ContentService = {
-
   getPaintings(section: Section): Painting[] {
     let paintings = [];
     switch (section.id) {
@@ -21,7 +20,9 @@ const ContentService = {
       default:
         paintings = [];
     }
-    return paintings.filter((painting) => !painting.hide).sort((p1, p2) => p1.year - p2.year);
+    return paintings
+      .filter((painting) => !painting.hide)
+      .sort((p1, p2) => p1.year - p2.year);
   },
 
   getImageNode(data, painting: Painting) {
