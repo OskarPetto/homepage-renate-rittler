@@ -1,23 +1,21 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { FunctionComponent, useState } from 'react';
 import Masonry from 'react-masonry-css';
 import Painting from '../models/painting';
 import { Section } from '../models/section';
 import ContentService from '../services/content-service';
 import './gallery.css';
+import PaintingModal from './painting-modal';
 
-const paintingQuery = graphql`
-query PaintingQuery {
+const smallPaintingQuery = graphql`
+query SmallPaintingQuery {
   allFile {
     edges {
       node {
         name
-        small: childImageSharp {
-        	gatsbyImageData(width: 400)
-        }
-        big: childImageSharp {
-        	gatsbyImageData(width: 2000)
+        childImageSharp {
+        gatsbyImageData(width: 400)
         }
       }
     }
@@ -31,8 +29,8 @@ interface GalleryProps {
 const Gallery: FunctionComponent<GalleryProps> = ({
   section,
 }: GalleryProps) => {
+  const data = useStaticQuery(smallPaintingQuery);
   const [openedPainting, setOpenedPainting] = useState<Painting>(undefined);
-  const data = useStaticQuery(paintingQuery);
 
   const paintings = ContentService.getPaintings(section);
 
@@ -43,7 +41,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
       </h2>
       <Masonry
         className="gallery-paintings"
-        // columnClassName="gallery-column"
+        columnClassName="gallery-column"
         breakpointCols={{
           default: 4,
           2000: 3,
@@ -60,7 +58,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             tabIndex={0}
           >
             <GatsbyImage
-              image={ContentService.getSmallImage(data, painting)}
+              image={ContentService.getImage(data, painting)}
               alt={painting.title}
             />
 
@@ -75,13 +73,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
           </div>
         ))}
       </Masonry>
-      {openedPainting !== undefined
-      && (
-      <GatsbyImage
-        image={ContentService.getBigImage(data, openedPainting)}
-        alt={openedPainting.title}
-      />
-      )}
+      <PaintingModal painting={openedPainting} onClose={() => { setOpenedPainting(null); }} />
     </div>
   );
 };

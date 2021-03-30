@@ -30,14 +30,9 @@ const ContentService = {
     return imageNode;
   },
 
-  getSmallImage(data, painting: Painting) {
+  getImage(data, painting: Painting) {
     const imageNode = this.getImageNode(data, painting);
-    return getImage(imageNode.small);
-  },
-
-  getBigImage(data, painting: Painting) {
-    const imageNode = this.getImageNode(data, painting);
-    return getImage(imageNode.big);
+    return getImage(imageNode);
   },
 
   getSections(): Section[] {
