@@ -21,6 +21,7 @@
 }
 
 .sidebar-container {
+  z-index: -1;
   background-color: #326b64;
   color: white;
   display: flex;
@@ -36,12 +37,14 @@
 }
 
 .artist-portrait {
+  z-index: 1;
   border-radius: 50%;
   border: 5px solid #326b64;
   margin-top: 0 !important;
 }
 
 .gatsby-image-wrapper img {
+  position: absolute;
   border: 0;
 }
 

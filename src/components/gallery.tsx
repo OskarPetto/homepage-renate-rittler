@@ -1,7 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React, { FunctionComponent, useState } from 'react';
-import Masonry from 'react-masonry-css';
 import Painting from '../models/painting';
 import { Section } from '../models/section';
 import ContentService from '../services/content-service';
@@ -40,15 +39,8 @@ const Gallery: FunctionComponent<GalleryProps> = ({
       <h2 className="gallery-title" id={section.id}>
         {section.name}
       </h2>
-      <Masonry
+      <div
         className="gallery-paintings"
-        columnClassName="gallery-column"
-        breakpointCols={{
-          default: 4,
-          2000: 3,
-          1400: 2,
-          1000: 1,
-        }}
       >
         {paintings.map((painting) => (
           <div
@@ -73,7 +65,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             </div>
           </div>
         ))}
-      </Masonry>
+      </div>
       <PaintingModal
         painting={openedPainting}
         onClose={() => {

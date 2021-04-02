@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
 
+.layout {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 576px) {
+  .layout {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    grid-template-rows: 1fr;
+  }
+}
+
 html {
   font-family: "Open Sans", sans-serif;
   scroll-behavior: smooth;
