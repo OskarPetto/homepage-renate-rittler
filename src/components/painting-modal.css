@@ -1,5 +1,5 @@
 .modal {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -11,6 +11,12 @@
   height: 100%;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.9);
+}
+
+@media (min-width: 576px) {
+  .modal {
+    display: flex;
+  }
 }
 
 .modal-content {

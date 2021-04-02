@@ -49,11 +49,11 @@ const Sidebar: FunctionComponent = () => {
               {section.name}
             </a>
           ))}
-          {artist.links.map((link) => (
+          {/* {artist.links.map((link) => (
             <a className="menu-item" href={link} aria-label="Mail">
               <FontAwesomeIcon icon={getIcon(link)} />
             </a>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
