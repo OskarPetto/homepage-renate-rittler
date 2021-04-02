@@ -12,7 +12,7 @@ const bigPaintingQuery = graphql`
         node {
           name
           childImageSharp {
-            gatsbyImageData(height: 1200)
+            gatsbyImageData(width: 1200, height: 1200, transformOptions: {fit: INSIDE})
           }
         }
       }
@@ -48,21 +48,12 @@ const PaintingModal: FunctionComponent<PaintingModalProps> = ({
     >
       <span className="close">&times;</span>
 
-      <div
-        className="modal-content"
-        role="img"
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-        onKeyDown={(e) => {
-          e.stopPropagation();
-        }}
-      >
-        <GatsbyImage
-          image={ContentService.getImage(data, painting)}
-          alt={painting.title}
-        />
-      </div>
+      <GatsbyImage
+        objectFit="contain"
+        className="modal-image"
+        image={ContentService.getImage(data, painting)}
+        alt={painting.title}
+      />
     </div>
   );
 };

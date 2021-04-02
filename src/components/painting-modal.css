@@ -1,10 +1,7 @@
 .modal {
   display: none;
-  justify-content: center;
-  align-items: center;
   position: fixed;
   z-index: 1;
-  /* padding-top: 100px;  */
   left: 0;
   top: 0;
   width: 100%;
@@ -16,14 +13,14 @@
 @media (min-width: 576px) {
   .modal {
     display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
-.modal-content {
-  max-width: 80vw;
-}
-
 .close {
+  z-index: 2;
+  cursor: pointer;
   position: absolute;
   top: 15px;
   right: 35px;
@@ -36,6 +33,9 @@
 .close:hover,
 .close:focus {
   color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
+}
+
+.modal-image {
+  max-width: 80%;
+  max-height: 90%;
 }
