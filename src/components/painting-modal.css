@@ -22,7 +22,7 @@
   z-index: 2;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: auto;
   left: 35px;
   color: #f1f1f1;
   font-size: 40px;
@@ -34,7 +34,7 @@
   z-index: 2;
   cursor: pointer;
   position: absolute;
-  top: 50%;
+  top: auto;
   right: 35px;
   color: #f1f1f1;
   font-size: 40px;
