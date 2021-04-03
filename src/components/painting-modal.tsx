@@ -1,6 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, useEffect, useRef } from 'react';
 import Painting from '../models/painting';
 import ContentService from '../services/content-service';
 import './painting-modal.css';
@@ -33,7 +33,12 @@ const PaintingModal: FunctionComponent<PaintingModalProps> = ({
   onNext,
   onPrevious,
 }: PaintingModalProps) => {
+  const modalEl = useRef(null);
   const data = useStaticQuery(bigPaintingQuery);
+
+  useEffect(() => {
+    modalEl.current.focus();
+  });
 
   const previousPainting = (e) => {
     onPrevious();
@@ -47,19 +52,32 @@ const PaintingModal: FunctionComponent<PaintingModalProps> = ({
 
   return (
     <div
+      ref={modalEl}
       className="modal"
       role="button"
       onClick={() => {
         onClose();
       }}
-      onKeyDown={() => {
-        onClose();
+      onKeyDown={(e) => {
+        switch (e.key) {
+          case 'Escape':
+          case 'Backspace':
+            onClose();
+            break;
+          case 'ArrowRight':
+            onNext();
+            break;
+          case 'ArrowLeft':
+            onNext();
+            break;
+          default:
+        }
       }}
       tabIndex={0}
     >
-      <span className="close">&times;</span>
-      <span className="left" role="button" onClick={previousPainting} onKeyDown={previousPainting} tabIndex={0}>&#10094;</span>
-      <span className="right" role="button" onClick={nextPainting} onKeyDown={nextPainting} tabIndex={0}>&#10095;</span>
+      <span className="close" role="button" onKeyDown={onClose} tabIndex={0}>&times;</span>
+      <span className="left" role="button" onClick={previousPainting} onKeyDown={onClose} tabIndex={0}>&#10094;</span>
+      <span className="right" role="button" onClick={nextPainting} onKeyDown={onClose} tabIndex={0}>&#10095;</span>
 
       <GatsbyImage
         objectFit="contain"

@@ -47,7 +47,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             role="button"
             className="painting"
             onClick={() => setOpenedIndex(index)}
-            onKeyDown={() => setOpenedIndex(index)}
+            onKeyDown={(e) => { if (e.key === 'Enter') { setOpenedIndex(index); } }}
             tabIndex={0}
           >
             <GatsbyImage
