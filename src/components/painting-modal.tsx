@@ -12,7 +12,7 @@ const bigPaintingQuery = graphql`
         node {
           name
           childImageSharp {
-            gatsbyImageData(width: 1200, height: 1200, transformOptions: {fit: INSIDE})
+            gatsbyImageData(width: 1500, height: 1500, transformOptions: {fit: INSIDE})
           }
         }
       }
