@@ -30,7 +30,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
   section,
 }: GalleryProps) => {
   const data = useStaticQuery(smallPaintingQuery);
-  const [openedPainting, setOpenedPainting] = useState<Painting>(undefined);
+  const [openedIndex, setOpenedIndex] = useState<number>(undefined);
 
   const paintings = ContentService.getPaintings(section);
 
@@ -42,37 +42,40 @@ const Gallery: FunctionComponent<GalleryProps> = ({
       <div
         className="gallery-paintings"
       >
-        {paintings.map((painting) => (
+        {[...Array(paintings.length).keys()].map((index) => (
           <div
             role="button"
             className="painting"
-            onClick={() => setOpenedPainting(painting)}
-            onKeyDown={() => setOpenedPainting(painting)}
+            onClick={() => setOpenedIndex(index)}
+            onKeyDown={() => setOpenedIndex(index)}
             tabIndex={0}
           >
             <GatsbyImage
               objectFit="contain"
-              image={ContentService.getImage(data, painting)}
-              alt={painting.title}
+              image={ContentService.getImage(data, paintings[index])}
+              alt={paintings[index].title}
             />
 
             <div className="painting-info">
-              <h3 className="painting-title card-title">{painting.title}</h3>
+              <h3 className="painting-title card-title">{paintings[index].title}</h3>
               <div className="painting-subtitle">
-                {`${painting.year}, 
-                  ${painting.technique}, 
-                  ${painting.size}`}
+                {`${paintings[index].year}, 
+                  ${paintings[index].technique}, 
+                  ${paintings[index].size}`}
               </div>
             </div>
           </div>
         ))}
       </div>
+      {openedIndex != null && (
       <PaintingModal
-        painting={openedPainting}
+        paintings={paintings}
+        openedIndex={openedIndex}
         onClose={() => {
-          setOpenedPainting(null);
+          setOpenedIndex(undefined);
         }}
       />
+      )}
     </div>
   );
 };
