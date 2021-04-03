@@ -40,12 +40,6 @@
   z-index: 1;
   border-radius: 50%;
   border: 5px solid #326b64;
-  margin-top: 0 !important;
-}
-
-.gatsby-image-wrapper img {
-  position: absolute;
-  border: 0;
 }
 
 .artist-description {

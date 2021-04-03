@@ -30,6 +30,13 @@ const Sidebar: FunctionComponent = () => {
         <div className="artist-name">
           <h1>{artist.name}</h1>
         </div>
+        <div className="menu">
+          {sections.map((section) => (
+            <a className="menu-item" href={`#${section.id}`}>
+              {section.name}
+            </a>
+          ))}
+        </div>
         <div className="artist-description">
           <ul>
             {artist.facts.map((fact) => (
@@ -43,13 +50,6 @@ const Sidebar: FunctionComponent = () => {
             <p>{quote.author}</p>
           </div>
         ))}
-        <div className="menu">
-          {sections.map((section) => (
-            <a className="menu-item" href={`#${section.id}`}>
-              {section.name}
-            </a>
-          ))}
-        </div>
       </div>
     </div>
   );
