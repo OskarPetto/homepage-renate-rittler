@@ -5,14 +5,15 @@
   "version": "0.1.0",
   "license": "0BSD",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "lint": "eslint . --ext .ts"
+    "lint": "eslint . --ext .ts",
+    "deploy": "npm run clean && npm run build && cd public && git init && git remote add origin https://github.com/OskarPetto/homepage-renate-rittler.git && git push origin --delete gh-pages && git checkout -b gh-pages && git add . && git commit -m \"deployment\" && git push --set-upstream origin gh-pages"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
