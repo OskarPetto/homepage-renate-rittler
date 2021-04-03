@@ -51,6 +51,7 @@ const Gallery: FunctionComponent<GalleryProps> = ({
             tabIndex={0}
           >
             <GatsbyImage
+              objectFit="contain"
               image={ContentService.getImage(data, painting)}
               alt={painting.title}
             />
