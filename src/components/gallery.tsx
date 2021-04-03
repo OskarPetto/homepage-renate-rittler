@@ -69,19 +69,19 @@ const Gallery: FunctionComponent<GalleryProps> = ({
       </div>
       {openedIndex != null && (
       <PaintingModal
-        painting={paintings[openedIndex]}
+        painting={openedIndex < 0 ? null : paintings[openedIndex]}
         onClose={() => {
           setOpenedIndex(undefined);
         }}
         onPrevious={() => {
-          setOpenedIndex(undefined);
+          setOpenedIndex(-1);
           const previousIndex = openedIndex - 1 < 0 ? paintings.length - 1 : openedIndex - 1;
-          setTimeout(() => setOpenedIndex(previousIndex), 50);
+          setTimeout(() => setOpenedIndex(previousIndex), 0);
         }}
         onNext={() => {
-          setOpenedIndex(undefined);
+          setOpenedIndex(-1);
           const nextIndex = (openedIndex + 1) % paintings.length;
-          setTimeout(() => setOpenedIndex(nextIndex), 50);
+          setTimeout(() => setOpenedIndex(nextIndex), 0);
         }}
       />
       )}

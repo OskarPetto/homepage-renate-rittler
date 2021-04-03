@@ -6,18 +6,23 @@ import ContentService from '../services/content-service';
 import './painting-modal.css';
 
 const bigPaintingQuery = graphql`
-  query BigPaintingQuery {
-    allFile {
-      edges {
-        node {
-          name
-          childImageSharp {
-            gatsbyImageData(width: 1500, height: 1500, transformOptions: {fit: INSIDE})
-          }
+query BigPaintingQuery {
+  allFile {
+    edges {
+      node {
+        name
+        childImageSharp {
+          gatsbyImageData(
+            width: 1600
+            height: 1200
+            transformOptions: {fit: INSIDE}
+            placeholder: NONE
+          )
         }
       }
     }
   }
+}
 `;
 
 interface PaintingModalProps {
@@ -79,12 +84,14 @@ const PaintingModal: FunctionComponent<PaintingModalProps> = ({
       <span className="left" role="button" onClick={previousPainting} onKeyDown={onClose} tabIndex={0}>&#10094;</span>
       <span className="right" role="button" onClick={nextPainting} onKeyDown={onClose} tabIndex={0}>&#10095;</span>
 
+      {painting != null && (
       <GatsbyImage
         objectFit="contain"
         className="modal-image"
         image={ContentService.getImage(data, painting)}
         alt={painting.title}
       />
+      )}
     </div>
   );
 };
