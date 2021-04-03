@@ -5,6 +5,7 @@
  */
 
 module.exports = {
+  pathPrefix: '/homepage-renate-rittler',
   /* Your site config here */
   plugins: [
     'gatsby-plugin-image',

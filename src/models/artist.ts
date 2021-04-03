@@ -6,7 +6,6 @@ export interface Quote {
 export interface Artist {
     facts: string[];
     name: string;
-    links: string[];
     quotes: Quote[];
 }
 

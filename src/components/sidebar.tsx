@@ -1,30 +1,30 @@
-import { StaticImage } from 'gatsby-plugin-image';
+import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import React, { FunctionComponent } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { graphql, useStaticQuery } from 'gatsby';
 import ContentService from '../services/content-service';
 import './sidebar.css';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-function getIcon(link: string) {
-  if (link.includes('mail')) {
-    return faEnvelope;
+const artistImageQuery = graphql`
+query ArtistImageQuery {
+  file(name: {eq: "_artist"}) {
+    childImageSharp {
+      gatsbyImageData(width: 150, height: 150)
+    }
   }
-  return null;
-}
+}`;
 
 const Sidebar: FunctionComponent = () => {
   const sections = ContentService.getSections();
   const artist = ContentService.getArtist();
+  const artistImage = useStaticQuery(artistImageQuery);
 
   return (
     <div className="sidebar">
       <div className="banner" />
       <div className="sidebar-container">
-        <StaticImage
-          src="../../static/artist.jpg"
+        <GatsbyImage
+          image={getImage(artistImage.file)}
           alt={artist.name}
-          width={160}
-          height={160}
           className="artist-portrait"
         />
         <div className="artist-name">
@@ -47,11 +47,6 @@ const Sidebar: FunctionComponent = () => {
           {sections.map((section) => (
             <a className="menu-item" href={`#${section.id}`}>
               {section.name}
-            </a>
-          ))}
-          {artist.links.map((link) => (
-            <a className="menu-item" href={link} aria-label="Mail">
-              <FontAwesomeIcon icon={getIcon(link)} />
             </a>
           ))}
         </div>
