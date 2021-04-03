@@ -1,8 +1,6 @@
 import { useStaticQuery, graphql } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import React, {
-  FunctionComponent, useCallback, useEffect, useState,
-} from 'react';
+import React, { FunctionComponent } from 'react';
 import Painting from '../models/painting';
 import ContentService from '../services/content-service';
 import './painting-modal.css';
@@ -14,7 +12,7 @@ const bigPaintingQuery = graphql`
         node {
           name
           childImageSharp {
-            gatsbyImageData(width: 150, height: 150, transformOptions: {fit: INSIDE})
+            gatsbyImageData(width: 1500, height: 1500, transformOptions: {fit: INSIDE})
           }
         }
       }
@@ -23,28 +21,27 @@ const bigPaintingQuery = graphql`
 `;
 
 interface PaintingModalProps {
-  paintings: Painting[];
-  openedIndex: number;
+  painting: Painting;
   onClose: () => void;
+  onNext: () => void;
+  onPrevious: () => void;
 }
 
 const PaintingModal: FunctionComponent<PaintingModalProps> = ({
-  paintings,
-  openedIndex,
+  painting,
   onClose,
+  onNext,
+  onPrevious,
 }: PaintingModalProps) => {
   const data = useStaticQuery(bigPaintingQuery);
-  const [index, setIndex] = useState<number>(openedIndex);
 
   const previousPainting = (e) => {
-    const previousIndex = index - 1 < 0 ? paintings.length - 1 : index - 1;
-    setIndex(previousIndex);
+    onPrevious();
     e.stopPropagation();
   };
 
   const nextPainting = (e) => {
-    const nextIndex = (index + 1) % paintings.length;
-    setIndex(nextIndex);
+    onNext();
     e.stopPropagation();
   };
 
@@ -64,12 +61,11 @@ const PaintingModal: FunctionComponent<PaintingModalProps> = ({
       <span className="left" role="button" onClick={previousPainting} onKeyDown={previousPainting} tabIndex={0}>&#10094;</span>
       <span className="right" role="button" onClick={nextPainting} onKeyDown={nextPainting} tabIndex={0}>&#10095;</span>
 
-      {/* <p style={{ color: 'white' }}>{ JSON.stringify(paintings[index])}</p> */}
       <GatsbyImage
         objectFit="contain"
         className="modal-image"
-        image={ContentService.getImage(data, paintings[index])}
-        alt={paintings[index].title}
+        image={ContentService.getImage(data, painting)}
+        alt={painting.title}
       />
     </div>
   );
