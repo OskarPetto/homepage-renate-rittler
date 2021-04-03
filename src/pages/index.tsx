@@ -9,11 +9,11 @@ const Home: FunctionComponent = () => (
   <div>
     <Helmet>
       <title>{artist.name}</title>
-      <meta charSet="utf-8" /> */}
+      <meta charSet="utf-8" />
       <meta name="description" content={`Künstlerische Arbeiten von ${artist.name}`} />
       <meta name="language" content="de-AT" />
-      <meta name="robots" content="index, follow" />
-      <link rel="canonical" href="https://renaterittler.art"/>
+      <meta name="robots" content="noindex, nofollow" />
+      <link rel="canonical" href="https://renaterittler.art" />
     </Helmet>
 
     <Layout>
